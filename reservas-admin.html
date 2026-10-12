@@ -1,0 +1,169 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Gestión de Reservas - Administrador</title>
+
+    <link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+
+    <!-- ENCABEZADO -->
+
+    <header class="encabezado">
+
+        <div class="logo">
+            🏟️ Reserva Canchas
+        </div>
+
+        <nav>
+            <a href="administrador.html">Inicio</a>
+
+            <button id="btnCerrarSesion">
+                Cerrar sesión
+            </button>
+        </nav>
+
+    </header>
+
+
+    <!-- CONTENIDO PRINCIPAL -->
+
+    <main>
+
+        <section class="reservas-admin-web">
+
+            <!-- TÍTULO -->
+
+            <div class="reservas-admin-cabecera">
+
+                <div>
+                    <span class="etiqueta-admin">
+                        🛡️ ADMINISTRACIÓN
+                    </span>
+
+                    <h1>Gestión de reservas</h1>
+
+                    <p>
+                        Consulta y supervisa las reservas
+                        registradas en el sistema deportivo.
+                    </p>
+                </div>
+
+                <div class="reservas-admin-icono">
+                    📋
+                </div>
+
+            </div>
+
+
+            <!-- PANEL DE TABLA -->
+
+            <div class="reservas-admin-panel">
+
+                <div class="reservas-admin-titulo">
+
+                    <div class="reservas-admin-icono-pequeno">
+                        📅
+                    </div>
+
+                    <div>
+                        <h2>Reservas registradas</h2>
+
+                        <p>
+                            Información de las reservas de los usuarios.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <!-- MENSAJE DE ESTADO -->
+
+                <p id="mensajeReservas">
+                    Cargando reservas...
+                </p>
+
+
+                <!-- TABLA -->
+
+                <div class="reservas-admin-tabla">
+
+                    <table>
+
+                        <thead>
+                            <tr>
+                                <th>Usuario</th>
+                                <th>Cancha</th>
+                                <th>Fecha</th>
+                                <th>Horario</th>
+                                <th>Estado</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="tablaReservas">
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+
+            <!-- BOTÓN VOLVER -->
+
+            <div class="reservas-admin-acciones">
+
+                <a href="administrador.html"
+                   class="btn-volver-admin">
+                    ⬅️ Volver al panel
+                </a>
+
+                <a href="usuarios-admin.html"
+                   class="btn-usuarios-admin">
+                    👥 Gestionar usuarios
+                </a>
+
+            </div>
+
+
+            <!-- MENSAJE FINAL -->
+
+            <div class="mensaje-admin">
+                <span>🏆</span>
+
+                <p>
+                    Una buena organización ayuda a mantener
+                    las reservas deportivas bajo control.
+                </p>
+
+                <span>⚽</span>
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- PIE DE PÁGINA -->
+
+    <footer>
+        <p>
+            🏟️ © 2026 Sistema de Reserva de Canchas Deportivas
+        </p>
+    </footer>
+
+
+    <script type="module" src="reservas-admin.js"></script>
+
+</body>
+
+</html>

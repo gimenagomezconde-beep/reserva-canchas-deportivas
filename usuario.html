@@ -1,0 +1,230 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Panel de Usuario - Reserva Canchas</title>
+
+    <link rel="stylesheet" href="estilos.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- ENCABEZADO -->
+
+    <header class="encabezado">
+
+        <div class="logo">
+            🏟️ Reserva Canchas
+        </div>
+
+        <nav>
+
+            <a href="usuario.html">
+                Inicio
+            </a>
+
+            <a href="#" id="btnCerrarSesion">
+                Cerrar sesión
+            </a>
+
+        </nav>
+
+    </header>
+
+
+
+    <!-- PANEL PRINCIPAL -->
+
+    <main>
+
+        <section class="contenido-panel">
+
+
+            <!-- Encabezado del panel -->
+
+            <div class="encabezado-panel">
+
+                <span class="etiqueta-panel">
+                    🏆 CENTRO DEPORTIVO
+                </span>
+
+                <h1>
+                    Panel del Usuario
+                </h1>
+
+                <p id="bienvenidaUsuario">
+                    Bienvenido al sistema de reservas.
+                </p>
+
+                <p class="descripcion-panel">
+                    Gestiona tus reservas y encuentra
+                    el espacio deportivo que necesitas.
+                </p>
+
+            </div>
+
+
+
+            <!-- TARJETAS -->
+
+            <div class="tarjetas">
+
+
+                <!-- RESERVAR CANCHA -->
+
+                <div class="tarjeta tarjeta-reserva">
+
+                    <div class="icono">
+                        🏟️
+                    </div>
+
+                    <span class="numero-tarjeta">
+                        01
+                    </span>
+
+                    <h2>
+                        Reservar cancha
+                    </h2>
+
+                    <p>
+                        Consulta las canchas disponibles,
+                        selecciona un horario y realiza
+                        tu reserva.
+                    </p>
+
+                    <button
+                        onclick="window.location.href='reservar.html'"
+                    >
+                        ⚡ Reservar cancha
+                    </button>
+
+                </div>
+
+
+
+                <!-- MIS RESERVAS -->
+
+                <div class="tarjeta tarjeta-reservas">
+
+                    <div class="icono">
+                        📅
+                    </div>
+
+                    <span class="numero-tarjeta">
+                        02
+                    </span>
+
+                    <h2>
+                        Mis reservas
+                    </h2>
+
+                    <p>
+                        Consulta y administra todas
+                        las reservas que has realizado.
+                    </p>
+
+                    <button
+                        onclick="window.location.href='mis-reservas.html'"
+                    >
+                        📋 Ver mis reservas
+                    </button>
+
+                </div>
+
+
+
+                <!-- MI PERFIL -->
+
+                <div class="tarjeta tarjeta-perfil">
+
+                    <div class="icono">
+                        👤
+                    </div>
+
+                    <span class="numero-tarjeta">
+                        03
+                    </span>
+
+                    <h2>
+                        Mi perfil
+                    </h2>
+
+                    <p>
+                        Consulta y revisa tus datos
+                        personales registrados.
+                    </p>
+
+                    <button
+                        onclick="window.location.href='perfil.html'"
+                    >
+                        👤 Ver perfil
+                    </button>
+
+                </div>
+
+
+            </div>
+
+
+            <!-- FRASE INFERIOR -->
+
+            <div class="mensaje-deportivo">
+
+                <span>
+                    ⚽
+                </span>
+
+                <p>
+                    ¡Prepárate, reserva tu cancha
+                    y disfruta del deporte!
+                </p>
+
+                <span>
+                    🏆
+                </span>
+
+            </div>
+
+
+        </section>
+
+    </main>
+
+
+
+    <!-- PIE DE PÁGINA -->
+
+    <footer>
+
+        <p>
+            🏟️ © 2026 Sistema de Reserva de Canchas Deportivas
+        </p>
+
+    </footer>
+
+
+
+    <!-- JAVASCRIPT -->
+
+    <script
+        type="module"
+        src="usuario.js"
+    ></script>
+
+
+</body>
+
+</html>
+```

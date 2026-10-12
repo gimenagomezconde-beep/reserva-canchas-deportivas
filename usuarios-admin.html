@@ -1,0 +1,301 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Gestión de Usuarios - Administrador</title>
+
+    <link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+
+    <!-- ENCABEZADO -->
+
+    <header class="encabezado">
+
+        <div class="logo">
+            🏟️ Reserva Canchas
+        </div>
+
+        <nav>
+            <a href="administrador.html">Inicio</a>
+
+            <button id="btnCerrarSesion">
+                Cerrar sesión
+            </button>
+        </nav>
+
+    </header>
+
+
+    <!-- CONTENIDO PRINCIPAL -->
+
+    <main>
+
+        <section class="usuarios-admin-web">
+
+            <!-- CABECERA -->
+
+            <div class="usuarios-admin-cabecera">
+
+                <div>
+                    <span class="etiqueta-admin">
+                        🛡️ ADMINISTRACIÓN
+                    </span>
+
+                    <h1>Gestión de usuarios</h1>
+
+                    <p>
+                        Consulta, busca y administra la información
+                        de las cuentas registradas en el sistema.
+                    </p>
+                </div>
+
+                <div class="usuarios-admin-icono">
+                    👥
+                </div>
+
+            </div>
+
+
+            <!-- PANEL DE USUARIOS -->
+
+            <div class="usuarios-admin-panel">
+
+                <div class="usuarios-admin-titulo">
+
+                    <div class="usuarios-admin-icono-pequeno">
+                        👥
+                    </div>
+
+                    <div>
+                        <h2>Usuarios registrados</h2>
+
+                        <p>
+                            Busca una cuenta para consultar o modificar
+                            sus datos.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <!-- BÚSQUEDA -->
+
+                <div class="busqueda-usuarios">
+
+                    <label for="buscarUsuario">
+                        🔎 Buscar usuario
+                    </label>
+
+                    <input
+                        type="text"
+                        id="buscarUsuario"
+                        placeholder="Escribe un nombre o correo electrónico..."
+                    >
+
+                </div>
+
+
+                <!-- MENSAJE -->
+
+                <p id="mensajeUsuarios">
+                    Cargando usuarios...
+                </p>
+
+
+                <!-- FORMULARIO DE EDICIÓN -->
+
+                <div id="formularioEditar"
+                     class="formulario-editar-usuario"
+                     style="display: none;">
+
+                    <div class="editar-usuario-cabecera">
+
+                        <div class="editar-usuario-icono">
+                            ✏️
+                        </div>
+
+                        <div>
+                            <h3>Editar usuario</h3>
+
+                            <p>
+                                Modifica los datos de la cuenta seleccionada.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="editar-usuario-campos">
+
+                        <div class="campo-editar-usuario">
+
+                            <label for="editarNombre">
+                                Nombre completo
+                            </label>
+
+                            <input
+                                type="text"
+                                id="editarNombre"
+                                placeholder="Ingrese el nombre"
+                            >
+
+                        </div>
+
+
+                        <div class="campo-editar-usuario">
+
+                            <label for="editarTelefono">
+                                Teléfono
+                            </label>
+
+                            <input
+                                type="text"
+                                id="editarTelefono"
+                                placeholder="Ingrese el teléfono"
+                            >
+
+                        </div>
+
+
+                        <div class="campo-editar-usuario">
+
+                            <label for="editarRol">
+                                Tipo de usuario
+                            </label>
+
+                            <select id="editarRol">
+
+                                <option value="usuario">
+                                    Usuario
+                                </option>
+
+                                <option value="administrador">
+                                    Administrador
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="editar-usuario-acciones">
+
+                        <button
+                            type="button"
+                            id="btnGuardarCambios"
+                            class="btn-guardar-usuario"
+                        >
+                            💾 Guardar cambios
+                        </button>
+
+                        <button
+                            type="button"
+                            id="btnCancelarEdicion"
+                            class="btn-cancelar-usuario"
+                        >
+                            ✖ Cancelar
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- TABLA -->
+
+                <div class="usuarios-admin-tabla">
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+                                <th>Nombre</th>
+                                <th>Correo electrónico</th>
+                                <th>Teléfono</th>
+                                <th>Rol</th>
+                                <th>Acciones</th>
+                            </tr>
+
+                        </thead>
+
+                        <tbody id="tablaUsuarios">
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+
+            <!-- ACCIONES INFERIORES -->
+
+            <div class="usuarios-admin-acciones">
+
+                <a
+                    href="administrador.html"
+                    class="btn-volver-admin"
+                >
+                    ⬅️ Volver al panel
+                </a>
+
+                <a
+                    href="reservas-admin.html"
+                    class="btn-usuarios-admin"
+                >
+                    📋 Ver reservas
+                </a>
+
+            </div>
+
+
+            <!-- MENSAJE FINAL -->
+
+            <div class="mensaje-admin">
+
+                <span>🔐</span>
+
+                <p>
+                    Administra las cuentas con responsabilidad
+                    y mantén organizada la información del sistema.
+                </p>
+
+                <span>🏆</span>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- PIE DE PÁGINA -->
+
+    <footer>
+
+        <p>
+            🏟️ © 2026 Sistema de Reserva de Canchas Deportivas
+        </p>
+
+    </footer>
+
+
+    <script
+        type="module"
+        src="usuarios-admin.js">
+    </script>
+
+</body>
+
+</html>

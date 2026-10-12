@@ -1,0 +1,201 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Mis Reservas - Reserva Canchas</title>
+
+    <link rel="stylesheet" href="estilos.css">
+
+</head>
+
+<body>
+
+    <!-- ENCABEZADO -->
+
+    <header class="encabezado">
+
+        <div class="logo">
+            🏟️ Reserva Canchas
+        </div>
+
+        <nav>
+
+            <a href="usuario.html">
+                Inicio
+            </a>
+
+            <a href="#" id="btnCerrarSesion">
+                Cerrar sesión
+            </a>
+
+        </nav>
+
+    </header>
+
+
+    <!-- CONTENIDO -->
+
+    <main>
+
+        <section class="reservas-web">
+
+            <!-- ENCABEZADO DE LA PÁGINA -->
+
+            <div class="reservas-cabecera">
+
+                <div>
+
+                    <span class="etiqueta-reservas">
+                        📋 GESTIÓN DE RESERVAS
+                    </span>
+
+                    <h1>
+                        Mis reservas
+                    </h1>
+
+                    <p>
+                        Consulta las canchas, fechas y horarios
+                        de las reservas que has realizado.
+                    </p>
+
+                </div>
+
+                <a
+                    href="reservar.html"
+                    class="btn-nueva-reserva"
+                >
+                    ➕ Nueva reserva
+                </a>
+
+            </div>
+
+
+            <!-- TARJETA DE RESERVAS -->
+
+            <div class="reservas-panel">
+
+                <div class="reservas-panel-titulo">
+
+                    <div class="icono-reservas">
+                        📅
+                    </div>
+
+                    <div>
+
+                        <h2>
+                            Historial de reservas
+                        </h2>
+
+                        <p>
+                            Aquí aparecerán tus reservas registradas.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- TABLA -->
+
+                <div class="tabla-contenedor">
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+
+                                <th>
+                                    🏟️ Cancha
+                                </th>
+
+                                <th>
+                                    📅 Fecha
+                                </th>
+
+                                <th>
+                                    ⏰ Horario
+                                </th>
+
+                                <th>
+                                    📌 Estado
+                                </th>
+
+                                <th>
+                                    ⚙️ Acción
+                                </th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody id="tablaReservas">
+
+                            <tr>
+
+                                <td colspan="5">
+                                    Cargando reservas...
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+
+                <p id="mensajeReservas"></p>
+
+            </div>
+
+
+            <!-- MENSAJE -->
+
+            <div class="mensaje-reservas-final">
+
+                <span>🏆</span>
+
+                <p>
+                    ¡Mantén tus reservas organizadas
+                    y disfruta de tu tiempo deportivo!
+                </p>
+
+                <span>⚽</span>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- PIE DE PÁGINA -->
+
+    <footer>
+
+        <p>
+            🏟️ © 2026 Sistema de Reserva de Canchas Deportivas
+        </p>
+
+    </footer>
+
+
+    <script
+        type="module"
+        src="mis-reservas.js">
+    </script>
+
+</body>
+
+</html>
+```

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Crear cuenta - Reserva Canchas</title>
+
+    <link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+
+    <header class="encabezado">
+
+        <div class="logo">
+            🏟️ Reserva Canchas
+        </div>
+
+        <nav>
+            <a href="index.html">Inicio</a>
+        </nav>
+
+    </header>
+
+
+    <main>
+
+        <section class="login">
+
+            <h2>Crear una cuenta</h2>
+
+            <form id="formRegistro">
+
+                <label for="nombre">
+                    Nombre completo
+                </label>
+
+                <input
+                    type="text"
+                    id="nombre"
+                    placeholder="Ingrese su nombre completo"
+                    required
+                >
+
+
+                <label for="correoRegistro">
+                    Correo electrónico
+                </label>
+
+                <input
+                    type="email"
+                    id="correoRegistro"
+                    placeholder="ejemplo@gmail.com"
+                    required
+                >
+
+
+                <label for="telefono">
+                    Teléfono
+                </label>
+
+                <input
+                    type="tel"
+                    id="telefono"
+                    placeholder="Ingrese su teléfono"
+                    required
+                >
+
+
+                <label for="passwordRegistro">
+                    Contraseña
+                </label>
+
+                <input
+                    type="password"
+                    id="passwordRegistro"
+                    placeholder="Mínimo 6 caracteres"
+                    minlength="6"
+                    required
+                >
+
+
+                <label for="confirmarPassword">
+                    Confirmar contraseña
+                </label>
+
+                <input
+                    type="password"
+                    id="confirmarPassword"
+                    placeholder="Repita su contraseña"
+                    minlength="6"
+                    required
+                >
+
+
+                <button type="submit">
+                    Crear cuenta
+                </button>
+
+            </form>
+
+
+            <p id="mensajeRegistro"></p>
+
+
+            <p class="registro-texto">
+
+                ¿Ya tienes una cuenta?
+
+                <a href="index.html">
+                    Iniciar sesión
+                </a>
+
+            </p>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        <p>
+            © 2026 Sistema de Reserva de Canchas Deportivas
+        </p>
+
+    </footer>
+
+
+    <script type="module" src="app.js"></script>
+
+</body>
+
+</html>

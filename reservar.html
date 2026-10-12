@@ -1,0 +1,320 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Reservar Cancha - Reserva Canchas</title>
+
+    <link rel="stylesheet" href="estilos.css">
+
+</head>
+
+<body>
+
+    <!-- ENCABEZADO -->
+
+    <header class="encabezado">
+
+        <div class="logo">
+            🏟️ Reserva Canchas
+        </div>
+
+        <nav>
+
+            <a href="usuario.html">
+                Inicio
+            </a>
+
+            <a href="#" id="btnCerrarSesion">
+                Cerrar sesión
+            </a>
+
+        </nav>
+
+    </header>
+
+
+    <!-- CONTENIDO PRINCIPAL -->
+
+    <main>
+
+        <section class="reserva-web">
+
+            <!-- INFORMACIÓN -->
+
+            <div class="reserva-informacion">
+
+                <span class="etiqueta-reserva">
+                    🏆 CENTRO DEPORTIVO
+                </span>
+
+                <h1>
+                    Reserva tu
+                    <span>cancha deportiva</span>
+                </h1>
+
+                <p class="texto-reserva">
+                    Elige tu deporte, selecciona la fecha
+                    y encuentra el horario que mejor se
+                    adapte a ti.
+                </p>
+
+
+                <div class="beneficios-reserva">
+
+                    <div class="beneficio">
+                        <div class="beneficio-icono">
+                            ⚽
+                        </div>
+
+                        <div>
+                            <strong>
+                                Elige tu deporte
+                            </strong>
+
+                            <p>
+                                Fútbol, vóley o básquet.
+                            </p>
+                        </div>
+                    </div>
+
+
+                    <div class="beneficio">
+                        <div class="beneficio-icono">
+                            📅
+                        </div>
+
+                        <div>
+                            <strong>
+                                Selecciona la fecha
+                            </strong>
+
+                            <p>
+                                Escoge el día de tu reserva.
+                            </p>
+                        </div>
+                    </div>
+
+
+                    <div class="beneficio">
+                        <div class="beneficio-icono">
+                            ⏰
+                        </div>
+
+                        <div>
+                            <strong>
+                                Elige el horario
+                            </strong>
+
+                            <p>
+                                Reserva el horario disponible.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div class="mensaje-deportivo-reserva">
+
+                    <span>🏟️</span>
+
+                    <p>
+                        ¡Reserva tu espacio y disfruta
+                        del deporte!
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- FORMULARIO -->
+
+            <div class="reserva-formulario">
+
+                <div class="titulo-formulario">
+
+                    <div class="icono-formulario">
+                        🏟️
+                    </div>
+
+                    <div>
+                        <h2>
+                            Nueva reserva
+                        </h2>
+
+                        <p>
+                            Completa los datos
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <form id="formReserva">
+
+
+                    <!-- CANCHA -->
+
+                    <div class="campo-reserva">
+
+                        <label for="cancha">
+                            🏟️ Seleccionar cancha
+                        </label>
+
+                        <select id="cancha" required>
+
+                            <option value="">
+                                Seleccione una cancha
+                            </option>
+
+                            <option value="Fútbol">
+                                ⚽ Cancha de Fútbol
+                            </option>
+
+                            <option value="Vóley">
+                                🏐 Cancha de Vóley
+                            </option>
+
+                            <option value="Básquet">
+                                🏀 Cancha de Básquet
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- FECHA -->
+
+                    <div class="campo-reserva">
+
+                        <label for="fecha">
+                            📅 Fecha de reserva
+                        </label>
+
+                        <input
+                            type="date"
+                            id="fecha"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- HORARIO -->
+
+                    <div class="campo-reserva">
+
+                        <label for="horario">
+                            ⏰ Horario
+                        </label>
+
+                        <select id="horario" required>
+
+                            <option value="">
+                                Seleccione un horario
+                            </option>
+
+                            <option value="08:00 - 09:00">
+                                08:00 - 09:00
+                            </option>
+
+                            <option value="09:00 - 10:00">
+                                09:00 - 10:00
+                            </option>
+
+                            <option value="10:00 - 11:00">
+                                10:00 - 11:00
+                            </option>
+
+                            <option value="11:00 - 12:00">
+                                11:00 - 12:00
+                            </option>
+
+                            <option value="14:00 - 15:00">
+                                14:00 - 15:00
+                            </option>
+
+                            <option value="15:00 - 16:00">
+                                15:00 - 16:00
+                            </option>
+
+                            <option value="16:00 - 17:00">
+                                16:00 - 17:00
+                            </option>
+
+                            <option value="17:00 - 18:00">
+                                17:00 - 18:00
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- PRECIO -->
+
+                    <div class="campo-reserva">
+
+                        <label for="precio">
+                            💰 Precio de reserva
+                        </label>
+
+                        <input
+                            type="text"
+                            id="precio"
+                            value="S/ 30.00"
+                            readonly
+                        >
+
+                    </div>
+
+
+                    <!-- BOTÓN -->
+
+                    <button
+                        type="submit"
+                        class="btn-confirmar-reserva"
+                    >
+                        ✅ Confirmar reserva
+                    </button>
+
+                </form>
+
+
+                <p id="mensajeReserva"></p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- PIE DE PÁGINA -->
+
+    <footer>
+
+        <p>
+            🏟️ © 2026 Sistema de Reserva de Canchas Deportivas
+        </p>
+
+    </footer>
+
+
+    <script
+        type="module"
+        src="reservar.js">
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,5120 @@
+/* ==========================================
+   CONFIGURACIÓN GENERAL
+   ========================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #f4f7fb, #eaf2f8);
+    color: #333;
+    min-height: 100vh;
+}
+
+
+/* ==========================================
+   ANIMACIONES
+   ========================================== */
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes subir {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes flotar {
+    0% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-12px) rotate(5deg);
+    }
+
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+}
+
+@keyframes girar {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes rebote {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+
+/* ==========================================
+   ENCABEZADO
+   ========================================== */
+
+.encabezado {
+    background: linear-gradient(
+        135deg,
+        #084298,
+        #0b5ed7,
+        #198754
+    );
+
+    color: white;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 18px 50px;
+
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.20);
+
+    position: relative;
+    z-index: 10;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    animation: aparecer 0.8s ease;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 15px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    transform: translateY(-2px);
+    opacity: 0.8;
+}
+
+
+/* ==========================================
+   INICIO
+   ========================================== */
+
+.inicio {
+    min-height: 500px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    background:
+        radial-gradient(
+            circle at 20% 30%,
+            rgba(255,255,255,0.15),
+            transparent 20%
+        ),
+        radial-gradient(
+            circle at 80% 70%,
+            rgba(255,255,255,0.12),
+            transparent 20%
+        ),
+        linear-gradient(
+            135deg,
+            #084298,
+            #0b5ed7,
+            #198754
+        );
+
+    color: white;
+
+    position: relative;
+    overflow: hidden;
+}
+
+.inicio::before {
+    content: "⚽";
+    position: absolute;
+    font-size: 90px;
+    opacity: 0.12;
+    left: 8%;
+    top: 15%;
+    animation: flotar 4s ease-in-out infinite;
+}
+
+.inicio::after {
+    content: "🏀";
+    position: absolute;
+    font-size: 85px;
+    opacity: 0.12;
+    right: 8%;
+    bottom: 15%;
+    animation: rebote 3s ease-in-out infinite;
+}
+
+.contenido-inicio {
+    max-width: 750px;
+    padding: 30px;
+    animation: aparecer 1s ease;
+    position: relative;
+    z-index: 2;
+}
+
+.contenido-inicio h1 {
+    font-size: 45px;
+    margin-bottom: 20px;
+}
+
+.contenido-inicio p {
+    font-size: 20px;
+    line-height: 1.6;
+}
+
+
+/* ==========================================
+   PELOTAS DECORATIVAS
+   ========================================== */
+
+.inicio .pelota {
+    position: absolute;
+    font-size: 50px;
+    opacity: 0.15;
+    pointer-events: none;
+}
+
+.inicio .pelota:nth-child(1) {
+    left: 15%;
+    bottom: 10%;
+    animation: flotar 5s infinite;
+}
+
+.inicio .pelota:nth-child(2) {
+    right: 15%;
+    top: 10%;
+    animation: rebote 4s infinite;
+}
+
+
+/* ==========================================
+   BOTONES
+   ========================================== */
+
+.botones {
+    margin-top: 30px;
+}
+
+.btn-principal,
+.btn-secundario {
+    display: inline-block;
+
+    padding: 14px 25px;
+
+    margin: 8px;
+
+    border-radius: 10px;
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+    transition:
+        transform 0.3s,
+        box-shadow 0.3s,
+        background 0.3s;
+}
+
+.btn-principal {
+    background: white;
+    color: #0b5ed7;
+}
+
+.btn-secundario {
+    background: #198754;
+    color: white;
+}
+
+.btn-principal:hover,
+.btn-secundario:hover {
+    transform: translateY(-4px) scale(1.03);
+
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+
+/* ==========================================
+   LOGIN
+   ========================================== */
+
+.login {
+    width: 400px;
+    max-width: 90%;
+
+    background: rgba(255, 255, 255, 0.96);
+
+    margin: 50px auto;
+
+    padding: 30px;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.15);
+
+    animation: subir 0.7s ease;
+}
+
+.login h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #084298;
+}
+
+.login label {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 5px;
+
+    font-weight: bold;
+}
+
+.login input,
+.login select {
+    width: 100%;
+
+    padding: 12px;
+
+    border: 2px solid #ddd;
+
+    border-radius: 8px;
+
+    font-size: 16px;
+
+    outline: none;
+
+    transition: 0.3s;
+}
+
+.login input:focus,
+.login select:focus {
+    border-color: #0b5ed7;
+
+    box-shadow:
+        0 0 0 3px rgba(11, 94, 215, 0.12);
+}
+
+.login button {
+    width: 100%;
+
+    margin-top: 25px;
+
+    padding: 13px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background: linear-gradient(
+        135deg,
+        #0b5ed7,
+        #084298
+    );
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.login button:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 7px 18px rgba(11, 94, 215, 0.35);
+}
+
+.registro-texto {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.registro-texto a {
+    color: #0b5ed7;
+    font-weight: bold;
+}
+
+
+/* ==========================================
+   PANEL DEL USUARIO
+   ========================================== */
+
+.contenido-panel {
+    width: 90%;
+    max-width: 1100px;
+
+    margin: 50px auto;
+
+    text-align: center;
+
+    animation: aparecer 0.7s ease;
+}
+
+.contenido-panel h1 {
+    font-size: 36px;
+    margin-bottom: 15px;
+    color: #084298;
+}
+
+.contenido-panel > p {
+    font-size: 18px;
+    margin-bottom: 40px;
+    color: #555;
+}
+
+.tarjetas {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 25px;
+
+    flex-wrap: wrap;
+}
+
+.tarjeta {
+    background: white;
+
+    width: 300px;
+
+    padding: 30px;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.12);
+
+    transition:
+        transform 0.35s,
+        box-shadow 0.35s;
+
+    animation: subir 0.8s ease;
+}
+
+.tarjeta:hover {
+    transform:
+        translateY(-10px)
+        scale(1.02);
+
+    box-shadow:
+        0 15px 35px rgba(0, 0, 0, 0.18);
+}
+
+.icono {
+    font-size: 55px;
+
+    margin-bottom: 15px;
+
+    display: inline-block;
+
+    animation: flotar 3s ease-in-out infinite;
+}
+
+.tarjeta h2 {
+    margin-bottom: 15px;
+    color: #084298;
+}
+
+.tarjeta p {
+    color: #666;
+
+    line-height: 1.5;
+
+    min-height: 70px;
+}
+
+.tarjeta button {
+    margin-top: 20px;
+
+    padding: 12px 20px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background: linear-gradient(
+        135deg,
+        #0b5ed7,
+        #084298
+    );
+
+    color: white;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.tarjeta button:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 7px 15px rgba(11, 94, 215, 0.35);
+}
+
+
+/* ==========================================
+   FORMULARIO DE RESERVA
+   ========================================== */
+
+.formulario-reserva {
+    width: 90%;
+
+    max-width: 600px;
+
+    background: white;
+
+    margin: 50px auto;
+
+    padding: 35px;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.13);
+
+    animation: subir 0.7s ease;
+}
+
+.formulario-reserva h1 {
+    text-align: center;
+    margin-bottom: 15px;
+    color: #084298;
+}
+
+.formulario-reserva > p {
+    text-align: center;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.formulario-reserva label {
+    display: block;
+
+    margin-top: 18px;
+
+    margin-bottom: 7px;
+
+    font-weight: bold;
+}
+
+.formulario-reserva select,
+.formulario-reserva input {
+    width: 100%;
+
+    padding: 12px;
+
+    border: 2px solid #ddd;
+
+    border-radius: 8px;
+
+    font-size: 16px;
+
+    outline: none;
+
+    transition: 0.3s;
+}
+
+.formulario-reserva select:focus,
+.formulario-reserva input:focus {
+    border-color: #0b5ed7;
+
+    box-shadow:
+        0 0 0 3px rgba(11, 94, 215, 0.12);
+}
+
+.formulario-reserva button {
+    width: 100%;
+
+    margin-top: 30px;
+
+    padding: 14px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background: linear-gradient(
+        135deg,
+        #0b5ed7,
+        #198754
+    );
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.formulario-reserva button:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.20);
+}
+
+#mensajeReserva {
+    text-align: center;
+
+    margin-top: 20px;
+
+    font-weight: bold;
+}
+
+
+/* ==========================================
+   MIS RESERVAS
+   ========================================== */
+
+.mis-reservas {
+    width: 94%;
+
+    max-width: 1200px;
+
+    background: white;
+
+    margin: 40px auto;
+
+    padding: 30px;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.12);
+
+    animation: aparecer 0.7s ease;
+}
+
+.mis-reservas h1 {
+    text-align: center;
+
+    margin-bottom: 15px;
+
+    color: #084298;
+}
+
+.mis-reservas > p {
+    text-align: center;
+
+    color: #666;
+
+    margin-bottom: 30px;
+}
+
+.tabla-contenedor {
+    width: 100%;
+
+    overflow-x: auto;
+
+    border-radius: 12px;
+
+    box-shadow:
+        0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+.tabla-contenedor table {
+    width: 100%;
+
+    border-collapse: separate;
+
+    border-spacing: 0;
+
+    min-width: 700px;
+}
+
+.tabla-contenedor th,
+.tabla-contenedor td {
+    padding: 15px;
+
+    border-bottom: 1px solid #e5e5e5;
+
+    text-align: center;
+
+    vertical-align: middle;
+}
+
+.tabla-contenedor th {
+    background: linear-gradient(
+        135deg,
+        #084298,
+        #0b5ed7
+    );
+
+    color: white;
+
+    font-size: 15px;
+
+    white-space: nowrap;
+}
+
+.tabla-contenedor th:first-child {
+    border-top-left-radius: 10px;
+}
+
+.tabla-contenedor th:last-child {
+    border-top-right-radius: 10px;
+}
+
+.tabla-contenedor tbody tr {
+    background: white;
+
+    transition:
+        transform 0.2s,
+        background 0.2s,
+        box-shadow 0.2s;
+}
+
+.tabla-contenedor tbody tr:nth-child(even) {
+    background: #f8fafc;
+}
+
+.tabla-contenedor tbody tr:hover {
+    background: #eaf3ff;
+
+    transform: scale(1.005);
+
+    box-shadow:
+        0 3px 10px rgba(0, 0, 0, 0.08);
+}
+
+.btn-cancelar {
+    background: #dc3545;
+
+    color: white;
+
+    border: none;
+
+    padding: 9px 16px;
+
+    border-radius: 7px;
+
+    cursor: pointer;
+
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+.btn-cancelar:hover {
+    background: #b02a37;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 5px 12px rgba(220, 53, 69, 0.3);
+}
+
+.estado-confirmada {
+    color: #198754;
+
+    font-weight: bold;
+
+    background: #e8f7ef;
+
+    padding: 6px 12px;
+
+    border-radius: 20px;
+
+    display: inline-block;
+}
+
+.estado-cancelada {
+    color: #dc3545;
+
+    font-weight: bold;
+
+    background: #fdebec;
+
+    padding: 6px 12px;
+
+    border-radius: 20px;
+
+    display: inline-block;
+}
+
+#mensajeReservas {
+    margin-top: 20px;
+
+    text-align: center;
+
+    font-weight: bold;
+}
+
+
+/* ==========================================
+   MI PERFIL
+   ========================================== */
+
+.contenedor-perfil {
+    width: 90%;
+
+    max-width: 600px;
+
+    margin: 40px auto;
+
+    text-align: center;
+
+    animation: aparecer 0.7s ease;
+}
+
+.contenedor-perfil h1 {
+    margin-bottom: 25px;
+
+    color: #084298;
+}
+
+.perfil-card {
+    background: white;
+
+    padding: 25px;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.12);
+
+    text-align: left;
+}
+
+.dato-perfil {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 20px;
+
+    padding: 18px 5px;
+
+    border-bottom: 1px solid #ddd;
+
+    transition: 0.3s;
+}
+
+.dato-perfil:hover {
+    padding-left: 10px;
+
+    background: #f7faff;
+}
+
+.dato-perfil:last-child {
+    border-bottom: none;
+}
+
+.dato-perfil strong {
+    color: #333;
+}
+
+.dato-perfil span {
+    color: #555;
+
+    text-align: right;
+
+    word-break: break-word;
+}
+
+.contenedor-perfil button {
+    margin-top: 25px;
+
+    padding: 12px 25px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    font-size: 16px;
+
+    background: #0b5ed7;
+
+    color: white;
+
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+.contenedor-perfil button:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 7px 15px rgba(11, 94, 215, 0.3);
+}
+
+
+/* ==========================================
+   TABLAS DEL ADMINISTRADOR
+   ========================================== */
+
+main {
+    animation: aparecer 0.6s ease;
+}
+
+main table {
+    width: 100%;
+
+    border-collapse: separate;
+
+    border-spacing: 0;
+
+    background: white;
+
+    border-radius: 14px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.10);
+}
+
+main table th {
+    background: linear-gradient(
+        135deg,
+        #084298,
+        #0b5ed7
+    );
+
+    color: white;
+
+    padding: 15px 12px;
+
+    text-align: center;
+
+    font-size: 15px;
+
+    white-space: nowrap;
+}
+
+main table td {
+    padding: 13px 12px;
+
+    text-align: center;
+
+    border-bottom: 1px solid #e8e8e8;
+
+    vertical-align: middle;
+}
+
+main table tbody tr {
+    transition:
+        background 0.2s,
+        transform 0.2s;
+}
+
+main table tbody tr:nth-child(even) {
+    background: #f8fafc;
+}
+
+main table tbody tr:hover {
+    background: #eaf3ff;
+
+    transform: scale(1.005);
+}
+
+
+/* ==========================================
+   BOTONES DEL ADMINISTRADOR
+   ========================================== */
+
+.btn-editar,
+.btn-eliminar {
+    border: none;
+
+    padding: 8px 13px;
+
+    margin: 3px;
+
+    border-radius: 7px;
+
+    color: white;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.btn-editar {
+    background: #0b5ed7;
+}
+
+.btn-editar:hover {
+    background: #084298;
+
+    transform: translateY(-2px);
+}
+
+.btn-eliminar {
+    background: #dc3545;
+}
+
+.btn-eliminar:hover {
+    background: #b02a37;
+
+    transform: translateY(-2px);
+}
+
+
+/* ==========================================
+   BUSCADOR
+   ========================================== */
+
+#buscarUsuario {
+    width: 100%;
+
+    padding: 13px 16px;
+
+    margin: 20px 0;
+
+    border: 2px solid #ddd;
+
+    border-radius: 10px;
+
+    font-size: 16px;
+
+    outline: none;
+
+    transition: 0.3s;
+}
+
+#buscarUsuario:focus {
+    border-color: #0b5ed7;
+
+    box-shadow:
+        0 0 0 3px rgba(11, 94, 215, 0.12);
+}
+
+
+/* ==========================================
+   FOOTER
+   ========================================== */
+
+footer {
+    text-align: center;
+
+    background: #212529;
+
+    color: white;
+
+    padding: 20px;
+
+    margin-top: 50px;
+}
+
+
+/* ==========================================
+   EFECTO DEPORTIVO EXTRA
+   ========================================== */
+
+.tarjeta:nth-child(1) .icono {
+    animation-delay: 0s;
+}
+
+.tarjeta:nth-child(2) .icono {
+    animation-delay: 0.4s;
+}
+
+.tarjeta:nth-child(3) .icono {
+    animation-delay: 0.8s;
+}
+
+.tarjeta:nth-child(4) .icono {
+    animation-delay: 1.2s;
+}
+
+
+/* ==========================================
+   RESPONSIVE - CELULAR
+   ========================================== */
+
+@media (max-width: 768px) {
+
+    .encabezado {
+        flex-direction: column;
+
+        gap: 15px;
+
+        padding: 18px 20px;
+    }
+
+    nav {
+        flex-wrap: wrap;
+
+        justify-content: center;
+    }
+
+    nav a {
+        margin-left: 8px;
+
+        margin-right: 8px;
+    }
+
+    .contenido-inicio h1 {
+        font-size: 32px;
+    }
+
+    .contenido-inicio p {
+        font-size: 17px;
+    }
+
+    .tarjeta {
+        width: 100%;
+
+        max-width: 380px;
+    }
+
+    .mis-reservas {
+        width: 96%;
+
+        padding: 18px;
+    }
+
+    .perfil-card {
+        padding: 18px;
+    }
+
+    .dato-perfil {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+    .dato-perfil span {
+        text-align: left;
+    }
+
+    main {
+        width: 96%;
+        margin: auto;
+    }
+
+}
+
+
+/* ==========================================
+   REDUCCIÓN DE ANIMACIONES SI EL USUARIO
+   LAS DESACTIVA EN SU SISTEMA
+   ========================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+
+        animation-iteration-count: 1 !important;
+
+        transition-duration: 0.01ms !important;
+
+        scroll-behavior: auto !important;
+    }
+
+}
+
+/* =====================================
+   PORTADA DEPORTIVA MODERNA
+===================================== */
+
+.inicio {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    min-height: 650px;
+    padding: 75px 7% 65px;
+    background:
+        radial-gradient(ellipse at 85% 20%,
+            rgba(11, 94, 215, 0.35),
+            transparent 42%),
+        linear-gradient(135deg, #07152f, #0b2854 60%, #071a35);
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 48px;
+}
+
+/* Líneas decorativas de la cancha */
+
+.linea-cancha {
+    position: absolute;
+    z-index: -1;
+    border: 2px solid rgba(255, 255, 255, 0.12);
+    pointer-events: none;
+}
+
+.linea-1 {
+    width: 440px;
+    height: 440px;
+    border-radius: 50%;
+    right: -100px;
+    top: 30px;
+    animation: girarCancha 35s linear infinite;
+}
+
+.linea-2 {
+    width: 280px;
+    height: 280px;
+    right: -20px;
+    top: 110px;
+    border-radius: 50%;
+}
+
+.circulo-cancha {
+    position: absolute;
+    z-index: -1;
+    width: 180px;
+    height: 180px;
+    border: 2px solid rgba(255, 255, 255, 0.10);
+    border-radius: 50%;
+    right: 30px;
+    top: 160px;
+}
+
+/* Texto principal */
+
+.contenido-inicio {
+    position: relative;
+    z-index: 1;
+    max-width: 720px;
+    animation: aparecerPortada 0.9s ease both;
+}
+
+.etiqueta-deportiva {
+    display: inline-block;
+    padding: 10px 17px;
+    margin-bottom: 22px;
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    border-radius: 30px;
+    background: rgba(255, 255, 255, 0.08);
+    color: #8ee6b0;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.contenido-inicio h1 {
+    color: #ffffff;
+    font-size: clamp(38px, 5.5vw, 66px);
+    line-height: 1.08;
+    margin: 0 0 22px;
+    font-weight: 900;
+    letter-spacing: -1.5px;
+}
+
+.contenido-inicio h1 span {
+    display: block;
+    color: #50e28b;
+}
+
+.contenido-inicio > p {
+    max-width: 560px;
+    color: #d4e2f5;
+    font-size: 17px;
+    line-height: 1.8;
+    margin-bottom: 30px;
+}
+
+/* Botones de la portada */
+
+.botones {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.btn-principal,
+.btn-secundario {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 50px;
+    padding: 14px 24px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 800;
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        background 0.25s ease;
+}
+
+.btn-principal {
+    background: linear-gradient(135deg, #28c76f, #14a854);
+    color: #ffffff;
+    box-shadow: 0 8px 25px rgba(20, 168, 84, 0.25);
+}
+
+.btn-secundario {
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    background: rgba(255, 255, 255, 0.07);
+    color: #ffffff;
+}
+
+.btn-principal:hover,
+.btn-secundario:hover {
+    transform: translateY(-4px);
+}
+
+.btn-principal:hover {
+    box-shadow: 0 12px 30px rgba(20, 168, 84, 0.4);
+}
+
+.btn-secundario:hover {
+    background: rgba(255, 255, 255, 0.16);
+}
+
+/* Tarjetas de deportes */
+
+.deportes-inicio {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+    width: 100%;
+    max-width: 900px;
+    position: relative;
+    z-index: 1;
+}
+
+.deporte-card {
+    padding: 25px 20px;
+    min-height: 160px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.075);
+    backdrop-filter: blur(8px);
+    text-align: center;
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease,
+        border-color 0.3s ease;
+    animation: subirTarjeta 0.8s ease both;
+}
+
+.deporte-card:nth-child(2) {
+    animation-delay: 0.15s;
+}
+
+.deporte-card:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.deporte-card:hover {
+    transform: translateY(-9px);
+    background: rgba(255, 255, 255, 0.14);
+    border-color: #50e28b;
+}
+
+.deporte-icono {
+    font-size: 42px;
+    margin-bottom: 12px;
+    transition: transform 0.3s ease;
+}
+
+.deporte-card:hover .deporte-icono {
+    transform: scale(1.18) rotate(-5deg);
+}
+
+.deporte-card h3 {
+    color: #ffffff;
+    margin: 0 0 8px;
+    font-size: 20px;
+}
+
+.deporte-card p {
+    color: #c5d7ed;
+    font-size: 13px;
+    margin: 0;
+}
+
+/* Formulario de inicio de sesión */
+
+.login {
+    padding: 75px 20px;
+    background: #f1f5fb;
+    scroll-margin-top: 25px;
+}
+
+.login-contenedor {
+    max-width: 470px;
+    margin: 0 auto;
+    padding: 38px;
+    background: #ffffff;
+    border: 1px solid #e3eaf4;
+    border-radius: 24px;
+    box-shadow: 0 20px 55px rgba(7, 26, 61, 0.12);
+    animation: aparecerPortada 0.8s ease both;
+}
+
+.login-icono {
+    display: grid;
+    place-items: center;
+    width: 62px;
+    height: 62px;
+    margin: 0 auto 16px;
+    border-radius: 18px;
+    background: #e6f8ed;
+    font-size: 28px;
+}
+
+.login-contenedor h2 {
+    text-align: center;
+    color: #071a3d;
+    margin: 0 0 10px;
+    font-size: 29px;
+}
+
+.login-descripcion {
+    text-align: center;
+    color: #68778d;
+    line-height: 1.6;
+    margin-bottom: 28px;
+}
+
+.login-contenedor form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.login-contenedor label {
+    color: #263750;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.login-contenedor input {
+    width: 100%;
+    padding: 14px 15px;
+    border: 1px solid #d6dfeb;
+    border-radius: 11px;
+    background: #f9fbfe;
+    font-size: 15px;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.login-contenedor input:focus {
+    border-color: #0b5ed7;
+    box-shadow: 0 0 0 4px rgba(11, 94, 215, 0.10);
+}
+
+.login-contenedor form button {
+    margin-top: 12px;
+    padding: 15px;
+    border: none;
+    border-radius: 11px;
+    background: linear-gradient(135deg, #0b5ed7, #084298);
+    color: white;
+    font-size: 15px;
+    font-weight: 800;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.login-contenedor form button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(11, 94, 215, 0.25);
+}
+
+.login-contenedor #mensajeLogin {
+    text-align: center;
+    overflow-wrap: anywhere;
+}
+
+.login-contenedor .registro-texto {
+    text-align: center;
+    color: #68778d;
+    font-size: 14px;
+    margin-top: 25px;
+}
+
+.login-contenedor .registro-texto a {
+    color: #0b5ed7;
+    font-weight: 800;
+    text-decoration: none;
+}
+
+.login-contenedor .registro-texto a:hover {
+    text-decoration: underline;
+}
+
+/* Animaciones */
+
+@keyframes aparecerPortada {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes subirTarjeta {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes girarCancha {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Adaptación a celulares */
+
+@media (max-width: 650px) {
+    .inicio {
+        padding: 55px 22px 45px;
+        gap: 35px;
+    }
+
+    .contenido-inicio h1 {
+        font-size: 42px;
+    }
+
+    .contenido-inicio > p {
+        font-size: 15px;
+    }
+
+    .deportes-inicio {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    .deporte-card {
+        min-height: auto;
+        padding: 20px;
+    }
+
+    .deporte-icono {
+        font-size: 35px;
+    }
+
+    .login {
+        padding: 45px 15px;
+    }
+
+    .login-contenedor {
+        padding: 27px 20px;
+    }
+}
+
+/* Respetar la preferencia de movimiento reducido */
+
+@media (prefers-reduced-motion: reduce) {
+    .inicio *,
+    .login *,
+    .linea-cancha,
+    .deporte-card {
+        animation: none !important;
+        transition: none !important;
+    }
+}
+
+/* =================================
+   INICIO DE SESIÓN MÁS LLAMATIVO
+================================= */
+
+.login {
+    background: linear-gradient(
+        135deg,
+        #e8f1ff,
+        #f7fbff,
+        #dceaff
+    );
+    padding: 85px 20px;
+}
+
+.login-contenedor {
+    max-width: 490px;
+    padding: 42px 38px;
+    background: #ffffff;
+    border: 2px solid #c4dafa;
+    border-radius: 26px;
+    box-shadow:
+        0 20px 55px rgba(7, 26, 61, 0.16),
+        0 0 0 7px rgba(11, 94, 215, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.login-contenedor:hover {
+    transform: translateY(-5px);
+    box-shadow:
+        0 25px 60px rgba(7, 26, 61, 0.20),
+        0 0 0 8px rgba(11, 94, 215, 0.08);
+}
+
+.login-icono {
+    width: 72px;
+    height: 72px;
+    background: linear-gradient(135deg, #d9fbe6, #a8f0c4);
+    border: 2px solid #8ce6ad;
+    box-shadow: 0 8px 20px rgba(25, 135, 84, 0.12);
+    font-size: 32px;
+}
+
+.login-contenedor h2 {
+    color: #071a3d;
+    font-size: 32px;
+    font-weight: 900;
+}
+
+.login-descripcion {
+    color: #52657f;
+    font-size: 15px;
+}
+
+.login-contenedor label {
+    color: #102c50;
+    font-weight: 800;
+}
+
+.login-contenedor input {
+    background: #f5f9ff;
+    border: 1.5px solid #cbd9ec;
+    border-radius: 12px;
+    padding: 15px;
+}
+
+.login-contenedor input:focus {
+    background: #ffffff;
+    border-color: #0b5ed7;
+    box-shadow: 0 0 0 4px rgba(11, 94, 215, 0.12);
+}
+
+.login-contenedor form button {
+    background: linear-gradient(135deg, #20c76a, #128b49);
+    box-shadow: 0 8px 18px rgba(18, 139, 73, 0.22);
+    border-radius: 12px;
+    font-size: 16px;
+    padding: 16px;
+}
+
+.login-contenedor form button:hover {
+    background: linear-gradient(135deg, #17b85c, #08783b);
+    box-shadow: 0 12px 24px rgba(18, 139, 73, 0.30);
+}
+
+.login-contenedor .registro-texto a {
+    color: #08783b;
+}
+
+/* INICIO DE SESIÓN - ESTILO DEPORTIVO OSCURO */
+
+.login {
+    background: linear-gradient(135deg, #061329, #0b2854, #071a35);
+    padding: 80px 20px;
+}
+
+.login-contenedor {
+    background: linear-gradient(145deg, #102b50, #071a35);
+    border: 1px solid #315780;
+    border-radius: 24px;
+    padding: 38px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.login-contenedor:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 25px 55px rgba(0, 0, 0, 0.4);
+}
+
+.login-contenedor h2 {
+    color: #ffffff;
+}
+
+.login-descripcion {
+    color: #b9cce4;
+}
+
+.login-contenedor label {
+    color: #e6f0ff;
+}
+
+.login-contenedor input {
+    color: #ffffff;
+    background: #102849;
+    border: 1px solid #315174;
+    border-radius: 11px;
+}
+
+.login-contenedor input::placeholder {
+    color: #9eb2cc;
+}
+
+.login-contenedor input:focus {
+    background: #153457;
+    border-color: #32d47a;
+    box-shadow: 0 0 0 3px rgba(50, 212, 122, 0.15);
+}
+
+.login-icono {
+    background: #123c61;
+    border: 1px solid #28658a;
+}
+
+.login-contenedor form button {
+    color: #ffffff;
+    background: linear-gradient(135deg, #28d878, #119b50);
+    border-radius: 11px;
+    box-shadow: 0 8px 20px rgba(25, 183, 101, 0.2);
+}
+
+.login-contenedor form button:hover {
+    background: linear-gradient(135deg, #49e990, #12ad58);
+    transform: translateY(-2px);
+}
+
+.login-contenedor .registro-texto {
+    color: #b9cce4;
+}
+
+.login-contenedor .registro-texto a {
+    color: #52e58a;
+}
+
+.login-contenedor #mensajeLogin {
+    color: #ffffff;
+}
+/* ==========================================
+   PANEL DE USUARIO - DISEÑO DEPORTIVO
+========================================== */
+
+.contenido-panel {
+    position: relative;
+    overflow: hidden;
+    min-height: 650px;
+    padding: 70px 6%;
+    background:
+        radial-gradient(
+            circle at 10% 20%,
+            rgba(25, 135, 84, 0.18),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 90% 80%,
+            rgba(11, 94, 215, 0.20),
+            transparent 35%
+        ),
+        linear-gradient(
+            135deg,
+            #061329,
+            #0b2854,
+            #071a35
+        );
+    color: white;
+}
+
+/* Decoración tipo cancha */
+
+.contenido-panel::before {
+    content: "";
+    position: absolute;
+    width: 420px;
+    height: 420px;
+    right: -170px;
+    top: -130px;
+    border: 2px solid rgba(255,255,255,0.08);
+    border-radius: 50%;
+}
+
+.contenido-panel::after {
+    content: "";
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    left: -120px;
+    bottom: -100px;
+    border: 2px solid rgba(255,255,255,0.07);
+    border-radius: 50%;
+}
+
+
+/* Encabezado */
+
+.encabezado-panel {
+    position: relative;
+    z-index: 2;
+    max-width: 850px;
+    margin: 0 auto 50px;
+    text-align: center;
+    animation: aparecerPanel 0.7s ease;
+}
+
+.etiqueta-panel {
+    display: inline-block;
+    padding: 9px 17px;
+    margin-bottom: 18px;
+    border: 1px solid rgba(255,255,255,0.18);
+    border-radius: 30px;
+    background: rgba(255,255,255,0.07);
+    color: #52e58a;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.encabezado-panel h1 {
+    margin: 0 0 12px;
+    color: #ffffff;
+    font-size: clamp(35px, 5vw, 52px);
+    font-weight: 900;
+}
+
+.encabezado-panel #bienvenidaUsuario {
+    margin: 0 0 8px;
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.descripcion-panel {
+    margin: 0;
+    color: #b9cce4;
+    font-size: 15px;
+}
+
+
+/* Tarjetas */
+
+.tarjetas {
+    position: relative;
+    z-index: 2;
+    max-width: 1100px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.tarjeta {
+    position: relative;
+    overflow: hidden;
+    min-height: 330px;
+    padding: 30px 25px;
+    border: 1px solid rgba(255,255,255,0.13);
+    border-radius: 22px;
+    background: rgba(255,255,255,0.075);
+    backdrop-filter: blur(10px);
+    text-align: center;
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        background 0.3s ease;
+    animation: subirPanel 0.7s ease both;
+}
+
+.tarjeta:nth-child(2) {
+    animation-delay: 0.15s;
+}
+
+.tarjeta:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.tarjeta:hover {
+    transform: translateY(-10px);
+    background: rgba(255,255,255,0.12);
+    border-color: rgba(82,229,138,0.6);
+}
+
+
+/* Número */
+
+.numero-tarjeta {
+    position: absolute;
+    top: 18px;
+    right: 20px;
+    color: rgba(255,255,255,0.25);
+    font-size: 13px;
+    font-weight: 900;
+}
+
+
+/* Iconos */
+
+.tarjeta .icono {
+    display: grid;
+    place-items: center;
+    width: 82px;
+    height: 82px;
+    margin: 10px auto 20px;
+    border-radius: 22px;
+    background: linear-gradient(
+        135deg,
+        rgba(11,94,215,0.8),
+        rgba(25,135,84,0.7)
+    );
+    font-size: 39px;
+    box-shadow:
+        0 10px 25px rgba(0,0,0,0.20);
+    transition: transform 0.3s ease;
+}
+
+.tarjeta:hover .icono {
+    transform: scale(1.1) rotate(-4deg);
+}
+
+
+/* Títulos */
+
+.tarjeta h2 {
+    margin: 0 0 12px;
+    color: #ffffff;
+    font-size: 22px;
+}
+
+.tarjeta p {
+    min-height: 70px;
+    margin: 0 0 22px;
+    color: #b9cce4;
+    line-height: 1.7;
+    font-size: 14px;
+}
+
+
+/* Botones */
+
+.tarjeta button {
+    width: 100%;
+    padding: 14px 18px;
+    border: none;
+    border-radius: 11px;
+    background: linear-gradient(
+        135deg,
+        #20c76a,
+        #119b50
+    );
+    color: #ffffff;
+    font-weight: 800;
+    cursor: pointer;
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.tarjeta button:hover {
+    transform: translateY(-3px);
+    box-shadow:
+        0 10px 22px rgba(25,183,101,0.3);
+}
+
+
+/* Mensaje inferior */
+
+.mensaje-deportivo {
+    position: relative;
+    z-index: 2;
+    max-width: 650px;
+    margin: 45px auto 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    color: #c8d8eb;
+    text-align: center;
+}
+
+.mensaje-deportivo span {
+    font-size: 25px;
+}
+
+.mensaje-deportivo p {
+    margin: 0;
+    font-size: 14px;
+}
+
+
+/* Animaciones */
+
+@keyframes aparecerPanel {
+
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+@keyframes subirPanel {
+
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* Celulares */
+
+@media (max-width: 800px) {
+
+    .contenido-panel {
+        padding: 55px 20px;
+    }
+
+    .tarjetas {
+        grid-template-columns: 1fr;
+        max-width: 500px;
+    }
+
+    .tarjeta {
+        min-height: auto;
+    }
+
+}
+
+@media (max-width: 500px) {
+
+    .encabezado-panel h1 {
+        font-size: 35px;
+    }
+
+    .encabezado-panel #bienvenidaUsuario {
+        font-size: 17px;
+    }
+
+    .mensaje-deportivo {
+        gap: 8px;
+    }
+
+}
+/* =====================================================
+   PÁGINA DE RESERVA DE CANCHAS
+   DISEÑO PRINCIPAL PARA COMPUTADORA
+   ===================================================== */
+
+.reserva-web {
+    min-height: calc(100vh - 140px);
+    padding: 65px 7%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 70px;
+    align-items: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #061329 0%,
+            #0b2854 50%,
+            #071a35 100%
+        );
+
+    position: relative;
+    overflow: hidden;
+}
+
+
+/* DECORACIÓN DE FONDO */
+
+.reserva-web::before {
+    content: "";
+    position: absolute;
+
+    width: 500px;
+    height: 500px;
+
+    border: 2px solid rgba(255, 255, 255, 0.06);
+    border-radius: 50%;
+
+    left: -180px;
+    top: 80px;
+}
+
+.reserva-web::after {
+    content: "";
+    position: absolute;
+
+    width: 350px;
+    height: 350px;
+
+    border: 2px solid rgba(255, 255, 255, 0.05);
+    border-radius: 50%;
+
+    right: -120px;
+    bottom: -100px;
+}
+
+
+/* INFORMACIÓN IZQUIERDA */
+
+.reserva-informacion {
+    position: relative;
+    z-index: 2;
+
+    max-width: 560px;
+}
+
+.etiqueta-reserva {
+    display: inline-block;
+
+    padding: 9px 18px;
+
+    border-radius: 30px;
+
+    background: rgba(43, 226, 124, 0.12);
+
+    border: 1px solid rgba(43, 226, 124, 0.35);
+
+    color: #53e28b;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+
+    margin-bottom: 22px;
+}
+
+
+.reserva-informacion h1 {
+    margin: 0;
+
+    color: white;
+
+    font-size: 50px;
+
+    line-height: 1.08;
+
+    font-weight: 800;
+}
+
+
+.reserva-informacion h1 span {
+    display: block;
+
+    color: #4ade80;
+}
+
+
+.texto-reserva {
+    margin-top: 24px;
+
+    max-width: 500px;
+
+    color: #c4d2e5;
+
+    font-size: 17px;
+
+    line-height: 1.7;
+}
+
+
+/* BENEFICIOS */
+
+.beneficios-reserva {
+    margin-top: 35px;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 18px;
+}
+
+
+.beneficio {
+    display: flex;
+
+    align-items: center;
+
+    gap: 16px;
+}
+
+
+.beneficio-icono {
+    width: 48px;
+    height: 48px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 14px;
+
+    background: rgba(255, 255, 255, 0.08);
+
+    border: 1px solid rgba(255, 255, 255, 0.1);
+
+    font-size: 22px;
+}
+
+
+.beneficio strong {
+    color: white;
+
+    font-size: 15px;
+}
+
+
+.beneficio p {
+    margin: 4px 0 0;
+
+    color: #9fb2ca;
+
+    font-size: 13px;
+}
+
+
+/* MENSAJE INFERIOR */
+
+.mensaje-deportivo-reserva {
+    margin-top: 38px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 16px 20px;
+
+    max-width: 450px;
+
+    border-radius: 15px;
+
+    background: rgba(255, 255, 255, 0.06);
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+
+.mensaje-deportivo-reserva span {
+    font-size: 28px;
+}
+
+
+.mensaje-deportivo-reserva p {
+    margin: 0;
+
+    color: #d8e4f2;
+
+    font-size: 14px;
+}
+
+
+/* =====================================================
+   FORMULARIO
+   ===================================================== */
+
+.reserva-formulario {
+    position: relative;
+    z-index: 2;
+
+    width: 100%;
+
+    max-width: 520px;
+
+    margin-left: auto;
+
+    padding: 38px;
+
+    background: #ffffff;
+
+    border-radius: 25px;
+
+    box-shadow:
+        0 25px 60px rgba(0, 0, 0, 0.35);
+
+    border: 1px solid #e2e8f0;
+}
+
+
+.titulo-formulario {
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    margin-bottom: 30px;
+}
+
+
+.icono-formulario {
+    width: 55px;
+    height: 55px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 15px;
+
+    background: #0b2854;
+
+    font-size: 25px;
+}
+
+
+.titulo-formulario h2 {
+    margin: 0;
+
+    color: #10233f;
+
+    font-size: 25px;
+}
+
+
+.titulo-formulario p {
+    margin: 4px 0 0;
+
+    color: #64748b;
+
+    font-size: 14px;
+}
+
+
+/* CAMPOS */
+
+.campo-reserva {
+    margin-bottom: 20px;
+}
+
+
+.campo-reserva label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #243b5a;
+
+    font-size: 14px;
+
+    font-weight: 700;
+}
+
+
+.campo-reserva select,
+.campo-reserva input {
+    width: 100%;
+
+    box-sizing: border-box;
+
+    padding: 14px 16px;
+
+    border: 1px solid #d5deea;
+
+    border-radius: 12px;
+
+    background: #f8fafc;
+
+    color: #243b5a;
+
+    font-size: 15px;
+
+    outline: none;
+
+    transition: 0.25s;
+}
+
+
+.campo-reserva select:focus,
+.campo-reserva input:focus {
+    border-color: #2563eb;
+
+    background: white;
+
+    box-shadow:
+        0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+
+/* PRECIO */
+
+#precio {
+    color: #16803c;
+
+    background: #f0fdf4;
+
+    border-color: #bbf7d0;
+
+    font-weight: 800;
+}
+
+
+/* BOTÓN */
+
+.btn-confirmar-reserva {
+    width: 100%;
+
+    margin-top: 8px;
+
+    padding: 15px 20px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #16a34a,
+            #22c55e
+        );
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 8px 20px rgba(22, 163, 74, 0.25);
+
+    transition: 0.25s;
+}
+
+
+.btn-confirmar-reserva:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 12px 25px rgba(22, 163, 74, 0.35);
+}
+
+
+/* MENSAJE FIREBASE */
+
+#mensajeReserva {
+    margin-top: 18px;
+
+    text-align: center;
+
+    font-size: 14px;
+
+    font-weight: 600;
+}
+
+
+/* =====================================================
+   ANIMACIÓN
+   ===================================================== */
+
+.reserva-informacion {
+    animation: aparecerReserva 0.7s ease;
+}
+
+
+.reserva-formulario {
+    animation: subirFormulario 0.7s ease;
+}
+
+
+@keyframes aparecerReserva {
+
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+}
+
+
+@keyframes subirFormulario {
+
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* =====================================================
+   ADAPTACIÓN BÁSICA
+   ===================================================== */
+
+@media (max-width: 900px) {
+
+    .reserva-web {
+        grid-template-columns: 1fr;
+
+        gap: 40px;
+
+        padding: 50px 6%;
+    }
+
+    .reserva-informacion {
+        max-width: 700px;
+    }
+
+    .reserva-formulario {
+        margin: 0 auto;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .reserva-informacion h1 {
+        font-size: 38px;
+    }
+
+    .reserva-formulario {
+        padding: 25px;
+    }
+
+}
+
+/* =====================================================
+   PÁGINA MIS RESERVAS
+   DISEÑO PARA COMPUTADORA
+   ===================================================== */
+
+.reservas-web {
+    min-height: calc(100vh - 140px);
+
+    padding: 55px 7%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #061329 0%,
+            #0b2854 50%,
+            #071a35 100%
+        );
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+
+/* DECORACIÓN */
+
+.reservas-web::before {
+    content: "";
+
+    position: absolute;
+
+    width: 500px;
+    height: 500px;
+
+    border: 2px solid rgba(255, 255, 255, 0.05);
+
+    border-radius: 50%;
+
+    left: -230px;
+    top: 80px;
+}
+
+
+.reservas-web::after {
+    content: "";
+
+    position: absolute;
+
+    width: 350px;
+    height: 350px;
+
+    border: 2px solid rgba(255, 255, 255, 0.05);
+
+    border-radius: 50%;
+
+    right: -150px;
+    bottom: -120px;
+}
+
+
+/* =====================================================
+   CABECERA
+   ===================================================== */
+
+.reservas-cabecera {
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 1200px;
+
+    margin: 0 auto 35px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 30px;
+}
+
+
+.etiqueta-reservas {
+    display: inline-block;
+
+    padding: 8px 16px;
+
+    border-radius: 25px;
+
+    background: rgba(43, 226, 124, 0.12);
+
+    border: 1px solid rgba(43, 226, 124, 0.3);
+
+    color: #53e28b;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.4px;
+
+    margin-bottom: 12px;
+}
+
+
+.reservas-cabecera h1 {
+    margin: 0;
+
+    color: white;
+
+    font-size: 42px;
+
+    font-weight: 800;
+}
+
+
+.reservas-cabecera p {
+    margin: 10px 0 0;
+
+    color: #aebfd4;
+
+    font-size: 16px;
+}
+
+
+/* BOTÓN NUEVA RESERVA */
+
+.btn-nueva-reserva {
+    flex-shrink: 0;
+
+    padding: 14px 22px;
+
+    border-radius: 12px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #16a34a,
+            #22c55e
+        );
+
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    box-shadow:
+        0 8px 20px rgba(22, 163, 74, 0.25);
+
+    transition: 0.25s;
+}
+
+
+.btn-nueva-reserva:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 12px 25px rgba(22, 163, 74, 0.35);
+}
+
+
+/* =====================================================
+   PANEL
+   ===================================================== */
+
+.reservas-panel {
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    padding: 30px;
+
+    background: #ffffff;
+
+    border-radius: 22px;
+
+    box-shadow:
+        0 25px 60px rgba(0, 0, 0, 0.3);
+
+    border: 1px solid #e2e8f0;
+}
+
+
+/* TÍTULO DEL PANEL */
+
+.reservas-panel-titulo {
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    margin-bottom: 25px;
+}
+
+
+.icono-reservas {
+    width: 52px;
+    height: 52px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 14px;
+
+    background: #0b2854;
+
+    font-size: 23px;
+}
+
+
+.reservas-panel-titulo h2 {
+    margin: 0;
+
+    color: #10233f;
+
+    font-size: 22px;
+}
+
+
+.reservas-panel-titulo p {
+    margin: 4px 0 0;
+
+    color: #64748b;
+
+    font-size: 13px;
+}
+
+
+/* =====================================================
+   TABLA
+   ===================================================== */
+
+.tabla-contenedor {
+    width: 100%;
+
+    overflow-x: auto;
+
+    border: 1px solid #e2e8f0;
+
+    border-radius: 14px;
+}
+
+
+.tabla-contenedor table {
+    width: 100%;
+
+    border-collapse: collapse;
+
+    min-width: 800px;
+}
+
+
+.tabla-contenedor th {
+    padding: 16px;
+
+    background: #0b2854;
+
+    color: white;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    text-align: left;
+}
+
+
+.tabla-contenedor td {
+    padding: 15px 16px;
+
+    border-bottom: 1px solid #e8edf3;
+
+    color: #334155;
+
+    font-size: 14px;
+
+    background: white;
+}
+
+
+.tabla-contenedor tbody tr:hover td {
+    background: #f8fafc;
+}
+
+
+.tabla-contenedor tbody tr:last-child td {
+    border-bottom: none;
+}
+
+
+/* =====================================================
+   MENSAJE
+   ===================================================== */
+
+#mensajeReservas {
+    margin: 18px 0 0;
+
+    text-align: center;
+
+    color: #475569;
+
+    font-size: 14px;
+
+    font-weight: 600;
+}
+
+
+/* =====================================================
+   MENSAJE FINAL
+   ===================================================== */
+
+.mensaje-reservas-final {
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 700px;
+
+    margin: 30px auto 0;
+
+    padding: 15px 22px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 15px;
+
+    border-radius: 14px;
+
+    background: rgba(255, 255, 255, 0.06);
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+
+.mensaje-reservas-final span {
+    font-size: 24px;
+}
+
+
+.mensaje-reservas-final p {
+    margin: 0;
+
+    color: #d7e2ef;
+
+    font-size: 14px;
+
+    text-align: center;
+}
+
+
+/* =====================================================
+   ANIMACIONES
+   ===================================================== */
+
+.reservas-cabecera {
+    animation: aparecerReservas 0.6s ease;
+}
+
+
+.reservas-panel {
+    animation: subirReservas 0.7s ease;
+}
+
+
+@keyframes aparecerReservas {
+
+    from {
+        opacity: 0;
+
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform: translateY(0);
+    }
+
+}
+
+
+@keyframes subirReservas {
+
+    from {
+        opacity: 0;
+
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform: translateY(0);
+    }
+
+}
+
+
+/* =====================================================
+   ADAPTACIÓN BÁSICA
+   ===================================================== */
+
+@media (max-width: 850px) {
+
+    .reservas-cabecera {
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+    .btn-nueva-reserva {
+        width: fit-content;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .reservas-web {
+        padding: 40px 5%;
+    }
+
+    .reservas-cabecera h1 {
+        font-size: 34px;
+    }
+
+    .reservas-panel {
+        padding: 20px;
+    }
+
+}
+
+/* =====================================================
+   PÁGINA MI PERFIL
+   DISEÑO PRINCIPAL PARA COMPUTADORA
+   ===================================================== */
+
+.perfil-web {
+    min-height: calc(100vh - 140px);
+
+    padding: 55px 7%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #061329 0%,
+            #0b2854 50%,
+            #071a35 100%
+        );
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+
+/* DECORACIÓN DE FONDO */
+
+.perfil-web::before {
+    content: "";
+
+    position: absolute;
+
+    width: 500px;
+    height: 500px;
+
+    border: 2px solid rgba(255, 255, 255, 0.05);
+
+    border-radius: 50%;
+
+    left: -230px;
+    top: 50px;
+}
+
+
+.perfil-web::after {
+    content: "";
+
+    position: absolute;
+
+    width: 350px;
+    height: 350px;
+
+    border: 2px solid rgba(255, 255, 255, 0.05);
+
+    border-radius: 50%;
+
+    right: -130px;
+    bottom: -100px;
+}
+
+
+/* =====================================================
+   CABECERA
+   ===================================================== */
+
+.perfil-cabecera {
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 1100px;
+
+    margin: 0 auto 35px;
+}
+
+
+.etiqueta-perfil {
+    display: inline-block;
+
+    padding: 8px 16px;
+
+    border-radius: 25px;
+
+    background: rgba(43, 226, 124, 0.12);
+
+    border: 1px solid rgba(43, 226, 124, 0.3);
+
+    color: #53e28b;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.4px;
+
+    margin-bottom: 12px;
+}
+
+
+.perfil-cabecera h1 {
+    margin: 0;
+
+    color: white;
+
+    font-size: 42px;
+
+    font-weight: 800;
+}
+
+
+.perfil-cabecera p {
+    margin: 10px 0 0;
+
+    color: #aebfd4;
+
+    font-size: 16px;
+}
+
+
+/* =====================================================
+   CONTENIDO PRINCIPAL
+   ===================================================== */
+
+.perfil-contenido {
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 1100px;
+
+    margin: 0 auto;
+
+    padding: 35px;
+
+    display: grid;
+
+    grid-template-columns: 0.8fr 1.8fr;
+
+    gap: 45px;
+
+    background: white;
+
+    border-radius: 24px;
+
+    border: 1px solid #e2e8f0;
+
+    box-shadow:
+        0 25px 60px rgba(0, 0, 0, 0.3);
+}
+
+
+/* =====================================================
+   IDENTIDAD
+   ===================================================== */
+
+.perfil-identidad {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 30px;
+
+    border-right: 1px solid #e5eaf0;
+}
+
+
+.perfil-avatar {
+    width: 105px;
+    height: 105px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #0b2854,
+            #2563eb
+        );
+
+    border: 6px solid #e8f0fa;
+
+    font-size: 45px;
+
+    box-shadow:
+        0 10px 25px rgba(11, 40, 84, 0.2);
+
+    margin-bottom: 20px;
+}
+
+
+.perfil-identidad h2 {
+    margin: 0;
+
+    color: #10233f;
+
+    font-size: 21px;
+}
+
+
+.perfil-identidad p {
+    margin-top: 8px;
+
+    color: #64748b;
+
+    font-size: 14px;
+
+    line-height: 1.5;
+}
+
+
+/* =====================================================
+   DATOS
+   ===================================================== */
+
+.perfil-datos {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 14px;
+
+    justify-content: center;
+}
+
+
+.dato-perfil {
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 16px 18px;
+
+    background: #f8fafc;
+
+    border: 1px solid #e2e8f0;
+
+    border-radius: 14px;
+
+    transition: 0.25s;
+}
+
+
+.dato-perfil:hover {
+    transform: translateX(4px);
+
+    background: #f1f5f9;
+
+    border-color: #cbd5e1;
+}
+
+
+.dato-icono {
+    width: 45px;
+    height: 45px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 12px;
+
+    background: #e8f0fa;
+
+    font-size: 20px;
+}
+
+
+.dato-texto {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 4px;
+}
+
+
+.dato-texto strong {
+    color: #64748b;
+
+    font-size: 12px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.6px;
+}
+
+
+.dato-texto span {
+    color: #10233f;
+
+    font-size: 15px;
+
+    font-weight: 700;
+}
+
+
+/* =====================================================
+   BOTONES
+   ===================================================== */
+
+.perfil-acciones {
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 1100px;
+
+    margin: 25px auto 0;
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 15px;
+}
+
+
+.btn-volver-perfil,
+.btn-reservas-perfil {
+    padding: 13px 22px;
+
+    border-radius: 12px;
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    transition: 0.25s;
+}
+
+
+.btn-volver-perfil {
+    background: rgba(255, 255, 255, 0.08);
+
+    border: 1px solid rgba(255, 255, 255, 0.15);
+
+    color: white;
+}
+
+
+.btn-reservas-perfil {
+    background:
+        linear-gradient(
+            135deg,
+            #16a34a,
+            #22c55e
+        );
+
+    color: white;
+
+    box-shadow:
+        0 8px 20px rgba(22, 163, 74, 0.2);
+}
+
+
+.btn-volver-perfil:hover,
+.btn-reservas-perfil:hover {
+    transform: translateY(-2px);
+}
+
+
+/* =====================================================
+   MENSAJE
+   ===================================================== */
+
+.mensaje-perfil {
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 650px;
+
+    margin: 30px auto 0;
+
+    padding: 15px 22px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 15px;
+
+    border-radius: 14px;
+
+    background: rgba(255, 255, 255, 0.06);
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+
+.mensaje-perfil span {
+    font-size: 24px;
+}
+
+
+.mensaje-perfil p {
+    margin: 0;
+
+    color: #d7e2ef;
+
+    font-size: 14px;
+
+    text-align: center;
+}
+
+
+/* =====================================================
+   ANIMACIONES
+   ===================================================== */
+
+.perfil-cabecera {
+    animation: aparecerPerfil 0.6s ease;
+}
+
+
+.perfil-contenido {
+    animation: subirPerfil 0.7s ease;
+}
+
+
+@keyframes aparecerPerfil {
+
+    from {
+        opacity: 0;
+
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform: translateY(0);
+    }
+
+}
+
+
+@keyframes subirPerfil {
+
+    from {
+        opacity: 0;
+
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform: translateY(0);
+    }
+
+}
+
+
+/* =====================================================
+   ADAPTACIÓN BÁSICA
+   ===================================================== */
+
+@media (max-width: 800px) {
+
+    .perfil-contenido {
+        grid-template-columns: 1fr;
+    }
+
+    .perfil-identidad {
+        border-right: none;
+
+        border-bottom: 1px solid #e5eaf0;
+
+        padding-bottom: 25px;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .perfil-web {
+        padding: 40px 5%;
+    }
+
+    .perfil-cabecera h1 {
+        font-size: 34px;
+    }
+
+    .perfil-contenido {
+        padding: 22px;
+    }
+
+    .perfil-acciones {
+        flex-direction: column;
+    }
+
+    .btn-volver-perfil,
+    .btn-reservas-perfil {
+        text-align: center;
+    }
+
+}
+
+/* =====================================================
+   PANEL DE ADMINISTRADOR
+   DISEÑO PRINCIPAL PARA COMPUTADORA
+   ===================================================== */
+
+.admin-web {
+    min-height: calc(100vh - 140px);
+
+    padding: 55px 7%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #061329 0%,
+            #0b2854 50%,
+            #071a35 100%
+        );
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+
+/* =====================================================
+   DECORACIÓN
+   ===================================================== */
+
+.admin-web::before {
+    content: "";
+
+    position: absolute;
+
+    width: 500px;
+    height: 500px;
+
+    border: 2px solid rgba(255, 255, 255, 0.05);
+
+    border-radius: 50%;
+
+    left: -230px;
+    top: 60px;
+}
+
+
+.admin-web::after {
+    content: "";
+
+    position: absolute;
+
+    width: 350px;
+    height: 350px;
+
+    border: 2px solid rgba(255, 255, 255, 0.05);
+
+    border-radius: 50%;
+
+    right: -140px;
+    bottom: -110px;
+}
+
+
+/* =====================================================
+   CABECERA
+   ===================================================== */
+
+.admin-cabecera {
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 1100px;
+
+    margin: 0 auto 40px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 30px;
+}
+
+
+.etiqueta-admin {
+    display: inline-block;
+
+    padding: 8px 16px;
+
+    border-radius: 25px;
+
+    background: rgba(43, 226, 124, 0.12);
+
+    border: 1px solid rgba(43, 226, 124, 0.3);
+
+    color: #53e28b;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.4px;
+
+    margin-bottom: 12px;
+}
+
+
+.admin-cabecera h1 {
+    margin: 0;
+
+    color: white;
+
+    font-size: 42px;
+
+    font-weight: 800;
+}
+
+
+.admin-cabecera p {
+    margin: 10px 0 0;
+
+    color: #aebfd4;
+
+    font-size: 16px;
+}
+
+
+/* ICONO ADMINISTRADOR */
+
+.admin-avatar {
+    width: 100px;
+    height: 100px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #0b2854,
+            #2563eb
+        );
+
+    border: 6px solid rgba(255, 255, 255, 0.08);
+
+    font-size: 42px;
+
+    box-shadow:
+        0 15px 35px rgba(0, 0, 0, 0.25);
+}
+
+
+/* =====================================================
+   TARJETAS
+   ===================================================== */
+
+.admin-tarjetas {
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 1100px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 25px;
+}
+
+
+.admin-card {
+    position: relative;
+
+    padding: 32px;
+
+    background: white;
+
+    border: 1px solid #e2e8f0;
+
+    border-radius: 22px;
+
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.25);
+
+    overflow: hidden;
+
+    transition: 0.3s;
+}
+
+
+.admin-card:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 28px 60px rgba(0, 0, 0, 0.32);
+}
+
+
+/* ICONO DE TARJETA */
+
+.admin-card-icono {
+    width: 58px;
+    height: 58px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 15px;
+
+    background: #e8f0fa;
+
+    font-size: 26px;
+
+    margin-bottom: 18px;
+}
+
+
+/* NÚMERO */
+
+.admin-card-numero {
+    position: absolute;
+
+    right: 25px;
+    top: 22px;
+
+    color: #dbe5f0;
+
+    font-size: 34px;
+
+    font-weight: 800;
+}
+
+
+.admin-card h2 {
+    margin: 0;
+
+    color: #10233f;
+
+    font-size: 23px;
+}
+
+
+.admin-card p {
+    min-height: 52px;
+
+    margin: 12px 0 22px;
+
+    color: #64748b;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+}
+
+
+/* BOTÓN */
+
+.admin-btn {
+    display: inline-block;
+
+    padding: 13px 20px;
+
+    border-radius: 11px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #16a34a,
+            #22c55e
+        );
+
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    box-shadow:
+        0 8px 20px rgba(22, 163, 74, 0.2);
+
+    transition: 0.25s;
+}
+
+
+.admin-btn:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 12px 25px rgba(22, 163, 74, 0.3);
+}
+
+
+/* =====================================================
+   INFORMACIÓN
+   ===================================================== */
+
+.admin-informacion {
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 1100px;
+
+    margin: 28px auto 0;
+
+    padding: 20px 25px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+    background: rgba(255, 255, 255, 0.07);
+
+    border: 1px solid rgba(255, 255, 255, 0.1);
+
+    border-radius: 16px;
+}
+
+
+.admin-info-icono {
+    width: 48px;
+    height: 48px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 12px;
+
+    background: rgba(255, 255, 255, 0.08);
+
+    font-size: 22px;
+}
+
+
+.admin-informacion h3 {
+    margin: 0;
+
+    color: white;
+
+    font-size: 16px;
+}
+
+
+.admin-informacion p {
+    margin: 5px 0 0;
+
+    color: #aebfd4;
+
+    font-size: 13px;
+
+    line-height: 1.5;
+}
+
+
+/* =====================================================
+   MENSAJE FINAL
+   ===================================================== */
+
+.mensaje-admin {
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 650px;
+
+    margin: 28px auto 0;
+
+    padding: 15px 22px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 15px;
+
+    border-radius: 14px;
+
+    background: rgba(255, 255, 255, 0.06);
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+
+.mensaje-admin span {
+    font-size: 24px;
+}
+
+
+.mensaje-admin p {
+    margin: 0;
+
+    color: #d7e2ef;
+
+    font-size: 14px;
+
+    text-align: center;
+}
+
+
+/* =====================================================
+   ANIMACIONES
+   ===================================================== */
+
+.admin-cabecera {
+    animation: aparecerAdmin 0.6s ease;
+}
+
+
+.admin-card {
+    animation: subirAdmin 0.7s ease;
+}
+
+
+@keyframes aparecerAdmin {
+
+    from {
+        opacity: 0;
+
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform: translateY(0);
+    }
+
+}
+
+
+@keyframes subirAdmin {
+
+    from {
+        opacity: 0;
+
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform: translateY(0);
+    }
+
+}
+
+
+/* =====================================================
+   ADAPTACIÓN BÁSICA
+   ===================================================== */
+
+@media (max-width: 750px) {
+
+    .admin-cabecera {
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+    .admin-tarjetas {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .admin-web {
+        padding: 40px 5%;
+    }
+
+    .admin-cabecera h1 {
+        font-size: 34px;
+    }
+
+    .admin-card {
+        padding: 25px;
+    }
+
+}
+/* =====================================================
+   GESTIÓN DE RESERVAS DEL ADMINISTRADOR
+   ===================================================== */
+
+.reservas-admin-web {
+    min-height: calc(100vh - 140px);
+    padding: 55px 6%;
+
+    background: linear-gradient(
+        135deg,
+        #061329 0%,
+        #0b2854 50%,
+        #071a35 100%
+    );
+
+    position: relative;
+    overflow: hidden;
+}
+
+
+/* CABECERA */
+
+.reservas-admin-cabecera {
+    position: relative;
+    z-index: 2;
+
+    max-width: 1250px;
+    margin: 0 auto 35px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.reservas-admin-cabecera h1 {
+    margin: 0;
+    color: white;
+    font-size: 42px;
+    font-weight: 800;
+}
+
+.reservas-admin-cabecera p {
+    margin-top: 10px;
+    color: #aebfd4;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.reservas-admin-icono {
+    width: 90px;
+    height: 90px;
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 22px;
+    background: rgba(255, 255, 255, 0.09);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+
+    font-size: 40px;
+}
+
+
+/* PANEL PRINCIPAL */
+
+.reservas-admin-panel {
+    position: relative;
+    z-index: 2;
+
+    max-width: 1250px;
+    margin: 0 auto;
+    padding: 32px;
+
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 22px;
+
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.3);
+}
+
+
+/* TÍTULO DEL PANEL */
+
+.reservas-admin-titulo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    margin-bottom: 20px;
+}
+
+.reservas-admin-icono-pequeno {
+    width: 52px;
+    height: 52px;
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #e8f0fa;
+    border-radius: 14px;
+    font-size: 24px;
+}
+
+.reservas-admin-titulo h2 {
+    margin: 0;
+    color: #10233f;
+    font-size: 23px;
+}
+
+.reservas-admin-titulo p {
+    margin: 5px 0 0;
+    color: #64748b;
+    font-size: 14px;
+}
+
+
+/* MENSAJE DE ESTADO */
+
+.reservas-admin-panel #mensajeReservas {
+    margin: 15px 0;
+    color: #475569;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+
+/* TABLA */
+
+.reservas-admin-tabla {
+    width: 100%;
+    overflow-x: auto;
+
+    border: 1px solid #e2e8f0;
+    border-radius: 14px;
+}
+
+.reservas-admin-tabla table {
+    width: 100%;
+    min-width: 800px;
+
+    border-collapse: collapse;
+    background: white;
+}
+
+.reservas-admin-tabla th {
+    padding: 17px 18px;
+
+    background: #0b2854;
+    color: white;
+
+    text-align: left;
+    white-space: nowrap;
+
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.reservas-admin-tabla td {
+    padding: 16px 18px;
+
+    border-bottom: 1px solid #e8edf3;
+
+    color: #334155;
+    font-size: 14px;
+}
+
+.reservas-admin-tabla tbody tr:hover td {
+    background: #f1f7fd;
+}
+
+.reservas-admin-tabla tbody tr:last-child td {
+    border-bottom: none;
+}
+
+
+/* ACCIONES */
+
+.reservas-admin-acciones {
+    position: relative;
+    z-index: 2;
+
+    max-width: 1250px;
+    margin: 25px auto 0;
+
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.btn-volver-admin,
+.btn-usuarios-admin {
+    display: inline-block;
+
+    padding: 13px 22px;
+    border-radius: 12px;
+
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 700;
+
+    transition: 0.25s;
+}
+
+.btn-volver-admin {
+    color: white;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.btn-usuarios-admin {
+    color: white;
+    background: linear-gradient(135deg, #16a34a, #22c55e);
+    box-shadow: 0 8px 20px rgba(22, 163, 74, 0.2);
+}
+
+.btn-volver-admin:hover,
+.btn-usuarios-admin:hover {
+    transform: translateY(-2px);
+}
+
+
+/* ANIMACIÓN */
+
+.reservas-admin-cabecera {
+    animation: aparecerTablaAdmin 0.6s ease;
+}
+
+.reservas-admin-panel {
+    animation: subirTablaAdmin 0.7s ease;
+}
+
+@keyframes aparecerTablaAdmin {
+    from {
+        opacity: 0;
+        transform: translateY(-18px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes subirTablaAdmin {
+    from {
+        opacity: 0;
+        transform: translateY(22px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* ADAPTACIÓN BÁSICA */
+
+@media (max-width: 650px) {
+    .reservas-admin-web {
+        padding: 35px 5%;
+    }
+
+    .reservas-admin-cabecera h1 {
+        font-size: 32px;
+    }
+
+    .reservas-admin-icono {
+        display: none;
+    }
+
+    .reservas-admin-panel {
+        padding: 20px;
+    }
+
+    .reservas-admin-acciones {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .btn-volver-admin,
+    .btn-usuarios-admin {
+        text-align: center;
+    }
+}
+/* =====================================================
+   GESTIÓN DE USUARIOS DEL ADMINISTRADOR
+   ===================================================== */
+
+.usuarios-admin-web {
+    min-height: calc(100vh - 140px);
+    padding: 55px 5%;
+
+    background: linear-gradient(
+        135deg,
+        #061329 0%,
+        #0b2854 50%,
+        #071a35 100%
+    );
+
+    position: relative;
+    overflow: hidden;
+}
+
+
+/* CABECERA */
+
+.usuarios-admin-cabecera {
+    position: relative;
+    z-index: 2;
+
+    max-width: 1350px;
+    margin: 0 auto 35px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.usuarios-admin-cabecera h1 {
+    margin: 0;
+    color: white;
+    font-size: 42px;
+    font-weight: 800;
+}
+
+.usuarios-admin-cabecera p {
+    margin-top: 10px;
+    color: #aebfd4;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.usuarios-admin-icono {
+    width: 90px;
+    height: 90px;
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 22px;
+    background: rgba(255, 255, 255, 0.09);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+
+    font-size: 40px;
+}
+
+
+/* PANEL PRINCIPAL */
+
+.usuarios-admin-panel {
+    position: relative;
+    z-index: 2;
+
+    max-width: 1350px;
+    margin: 0 auto;
+    padding: 32px;
+
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 22px;
+
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.3);
+}
+
+
+/* TÍTULO DEL PANEL */
+
+.usuarios-admin-titulo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    margin-bottom: 25px;
+}
+
+.usuarios-admin-icono-pequeno {
+    width: 52px;
+    height: 52px;
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #e8f0fa;
+    border-radius: 14px;
+
+    font-size: 24px;
+}
+
+.usuarios-admin-titulo h2 {
+    margin: 0;
+    color: #10233f;
+    font-size: 23px;
+}
+
+.usuarios-admin-titulo p {
+    margin: 5px 0 0;
+    color: #64748b;
+    font-size: 14px;
+}
+
+
+/* BÚSQUEDA */
+
+.busqueda-usuarios {
+    max-width: 600px;
+    margin-bottom: 20px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+}
+
+.busqueda-usuarios label {
+    color: #334155;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.busqueda-usuarios input {
+    width: 100%;
+    box-sizing: border-box;
+
+    padding: 14px 16px;
+
+    border: 1px solid #cbd5e1;
+    border-radius: 11px;
+
+    background: #f8fafc;
+    color: #10233f;
+
+    font-size: 14px;
+    outline: none;
+    transition: 0.2s;
+}
+
+.busqueda-usuarios input:focus {
+    border-color: #2563eb;
+    background: white;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+
+/* MENSAJE DE ESTADO */
+
+.usuarios-admin-panel #mensajeUsuarios {
+    margin: 15px 0;
+
+    color: #475569;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+
+/* =====================================================
+   FORMULARIO DE EDICIÓN
+   ===================================================== */
+
+.formulario-editar-usuario {
+    margin: 25px 0;
+    padding: 25px;
+
+    background: #f1f7fd;
+    border: 1px solid #d5e5f6;
+    border-radius: 16px;
+}
+
+.editar-usuario-cabecera {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+
+    margin-bottom: 22px;
+}
+
+.editar-usuario-icono {
+    width: 45px;
+    height: 45px;
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #dceafe;
+    border-radius: 12px;
+
+    font-size: 22px;
+}
+
+.editar-usuario-cabecera h3 {
+    margin: 0;
+    color: #10233f;
+    font-size: 20px;
+}
+
+.editar-usuario-cabecera p {
+    margin: 5px 0 0;
+    color: #64748b;
+    font-size: 13px;
+}
+
+.editar-usuario-campos {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.campo-editar-usuario {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.campo-editar-usuario label {
+    color: #334155;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.campo-editar-usuario input,
+.campo-editar-usuario select {
+    width: 100%;
+    box-sizing: border-box;
+
+    padding: 13px 14px;
+
+    background: white;
+    border: 1px solid #cbd5e1;
+    border-radius: 10px;
+
+    color: #10233f;
+    font-size: 14px;
+    outline: none;
+}
+
+.campo-editar-usuario input:focus,
+.campo-editar-usuario select:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.editar-usuario-acciones {
+    display: flex;
+    gap: 12px;
+    margin-top: 22px;
+}
+
+.editar-usuario-acciones button {
+    padding: 12px 19px;
+    border: none;
+    border-radius: 10px;
+
+    color: white;
+    font-size: 13px;
+    font-weight: 700;
+
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.btn-guardar-usuario {
+    background: linear-gradient(135deg, #16a34a, #22c55e);
+}
+
+.btn-cancelar-usuario {
+    background: #64748b;
+}
+
+.editar-usuario-acciones button:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.05);
+}
+
+
+/* =====================================================
+   TABLA DE USUARIOS
+   ===================================================== */
+
+.usuarios-admin-tabla {
+    width: 100%;
+    overflow-x: auto;
+
+    border: 1px solid #e2e8f0;
+    border-radius: 14px;
+}
+
+.usuarios-admin-tabla table {
+    width: 100%;
+    min-width: 950px;
+
+    border-collapse: collapse;
+    background: white;
+}
+
+.usuarios-admin-tabla th {
+    padding: 17px 16px;
+
+    background: #0b2854;
+    color: white;
+
+    text-align: left;
+    white-space: nowrap;
+
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.usuarios-admin-tabla td {
+    padding: 15px 16px;
+
+    border-bottom: 1px solid #e8edf3;
+
+    color: #334155;
+    font-size: 14px;
+    vertical-align: middle;
+}
+
+.usuarios-admin-tabla tbody tr:hover td {
+    background: #f1f7fd;
+}
+
+.usuarios-admin-tabla tbody tr:last-child td {
+    border-bottom: none;
+}
+
+
+/* BOTONES QUE GENERA JAVASCRIPT EN LA TABLA */
+
+.usuarios-admin-tabla button {
+    margin: 3px;
+    padding: 8px 12px;
+
+    border: none;
+    border-radius: 8px;
+
+    background: #0b2854;
+    color: white;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.usuarios-admin-tabla button:hover {
+    background: #2563eb;
+    transform: translateY(-1px);
+}
+
+
+/* =====================================================
+   ACCIONES INFERIORES
+   ===================================================== */
+
+.usuarios-admin-acciones {
+    position: relative;
+    z-index: 2;
+
+    max-width: 1350px;
+    margin: 25px auto 0;
+
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+
+/* ANIMACIONES */
+
+.usuarios-admin-cabecera {
+    animation: aparecerUsuariosAdmin 0.6s ease;
+}
+
+.usuarios-admin-panel {
+    animation: subirUsuariosAdmin 0.7s ease;
+}
+
+@keyframes aparecerUsuariosAdmin {
+    from {
+        opacity: 0;
+        transform: translateY(-18px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes subirUsuariosAdmin {
+    from {
+        opacity: 0;
+        transform: translateY(22px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* ADAPTACIÓN BÁSICA */
+
+@media (max-width: 900px) {
+    .editar-usuario-campos {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 650px) {
+    .usuarios-admin-web {
+        padding: 35px 5%;
+    }
+
+    .usuarios-admin-cabecera h1 {
+        font-size: 32px;
+    }
+
+    .usuarios-admin-icono {
+        display: none;
+    }
+
+    .usuarios-admin-panel {
+        padding: 20px;
+    }
+
+    .editar-usuario-campos {
+        grid-template-columns: 1fr;
+    }
+
+    .editar-usuario-acciones {
+        flex-direction: column;
+    }
+
+    .editar-usuario-acciones button {
+        width: 100%;
+    }
+}
+
+/* =========================================
+   DISEÑO PRINCIPAL PARA PC Y LAPTOP
+   SISTEMA DE RESERVA DE CANCHAS
+   ========================================= */
+
+@media (min-width: 701px) {
+
+    /* ENCABEZADO HORIZONTAL */
+
+    .encabezado {
+        min-height: 82px;
+        padding: 0 6%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 30px;
+    }
+
+    .encabezado nav {
+        display: flex;
+        align-items: center;
+        gap: 28px;
+    }
+
+    /* PORTADA PRINCIPAL */
+
+    .inicio {
+        min-height: 570px;
+        padding: 65px 7%;
+        box-sizing: border-box;
+
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr;
+        align-items: center;
+        gap: 65px;
+
+        position: relative;
+        overflow: hidden;
+    }
+
+    .contenido-inicio {
+        max-width: 650px;
+        position: relative;
+        z-index: 2;
+    }
+
+    .contenido-inicio h1 {
+        font-size: clamp(44px, 4vw, 62px);
+        line-height: 1.12;
+        margin: 18px 0;
+    }
+
+    .contenido-inicio p {
+        max-width: 570px;
+        font-size: 17px;
+        line-height: 1.8;
+    }
+
+    .botones {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 16px;
+        flex-wrap: wrap;
+        margin-top: 28px;
+    }
+
+    /* TARJETAS DE DEPORTES */
+
+    .deportes-inicio {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+        align-items: stretch;
+        position: relative;
+        z-index: 2;
+    }
+
+    .deporte-card {
+        min-height: 175px;
+        padding: 25px 20px;
+        box-sizing: border-box;
+    }
+
+    .deporte-card:last-child {
+        grid-column: 1 / -1;
+    }
+
+    /* INICIO DE SESIÓN EN DOS COLUMNAS */
+
+    .login {
+        min-height: 440px;
+        padding: 65px 7%;
+        box-sizing: border-box;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .login-contenedor {
+        width: 100%;
+        max-width: 1180px;
+        margin: 0 auto;
+        padding: 48px 55px;
+        box-sizing: border-box;
+
+        display: grid;
+        grid-template-columns: 0.9fr 1.1fr;
+        align-items: center;
+        gap: 65px;
+
+        border-radius: 24px;
+    }
+
+    .login-contenedor > div:first-child {
+        text-align: left;
+    }
+
+    .login-contenedor > div:first-child .login-icono {
+        margin: 0 0 22px;
+    }
+
+    .login-contenedor > div:first-child h2 {
+        font-size: 38px;
+        text-align: left;
+    }
+
+    .login-contenedor > div:first-child .login-descripcion {
+        text-align: left;
+        max-width: 390px;
+    }
+
+    .login-contenedor form {
+        width: 100%;
+    }
+
+    .login-contenedor form input {
+        min-height: 50px;
+    }
+
+    .login-contenedor form button {
+        min-height: 54px;
+    }
+
+    .registro-texto {
+        text-align: left;
+    }
+
+    /* PIE DE PÁGINA */
+
+    footer {
+        padding: 22px 5%;
+        text-align: center;
+    }
+}
+/* ===== LOGIN PARA PC Y LAPTOP ===== */
+
+.login {
+    width: 100%;
+    padding: 70px 6%;
+    box-sizing: border-box;
+    background: #f1f5f9;
+    scroll-margin-top: 30px;
+}
+
+.login-contenedor {
+    width: 100%;
+    max-width: 1150px;
+    min-height: 440px;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    background: #ffffff;
+    border-radius: 22px;
+    overflow: hidden;
+
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.10);
+}
+
+/* Columna izquierda */
+
+.login-presentacion {
+    padding: 55px 45px;
+    background: #123c2c;
+    color: #ffffff;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.login-icono {
+    font-size: 48px;
+    margin-bottom: 18px;
+}
+
+.login-presentacion h2 {
+    margin: 0 0 18px;
+    font-size: 36px;
+}
+
+.login-descripcion {
+    font-size: 16px;
+    line-height: 1.8;
+    margin: 0 0 20px;
+    color: #e2eee7;
+}
+
+.login-beneficios p {
+    margin: 14px 0;
+    font-size: 15px;
+}
+
+/* Columna derecha */
+
+.login-formulario {
+    padding: 55px 50px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.login-formulario h3 {
+    font-size: 27px;
+    color: #123c2c;
+    margin: 0 0 10px;
+}
+
+.formulario-descripcion {
+    color: #64748b;
+    margin-bottom: 28px;
+}
+
+.login-formulario form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.login-formulario label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #334155;
+    margin-top: 8px;
+}
+
+.login-formulario input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 14px 15px;
+
+    border: 1px solid #cbd5e1;
+    border-radius: 9px;
+    font-size: 15px;
+    outline: none;
+}
+
+.login-formulario input:focus {
+    border-color: #198754;
+    box-shadow: 0 0 0 3px rgba(25, 135, 84, 0.12);
+}
+
+.login-formulario button {
+    width: 100%;
+    padding: 15px;
+    margin-top: 15px;
+
+    border: none;
+    border-radius: 9px;
+
+    background: #198754;
+    color: #ffffff;
+
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.login-formulario button:hover {
+    background: #146c43;
+}
+
+.registro-texto {
+    margin-top: 25px;
+    text-align: center;
+    color: #64748b;
+    font-size: 14px;
+}
+
+.registro-texto a {
+    color: #198754;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.registro-texto a:hover {
+    text-decoration: underline;
+}
+
+/* Adaptación para pantallas pequeñas */
+
+@media (max-width: 768px) {
+    .login {
+        padding: 35px 5%;
+    }
+
+    .login-contenedor {
+        grid-template-columns: 1fr;
+    }
+
+    .login-presentacion,
+    .login-formulario {
+        padding: 35px 25px;
+    }
+
+    .login-presentacion h2 {
+        font-size: 29px;
+    }
+}
